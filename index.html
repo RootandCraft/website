@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Root & Craft — Gather. Create. Be.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Moontime&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── CSS Variables ─── */
+    :root {
+      --charcoal:  #322e2e;
+      --sage:      #818984;
+      --cream:     #f6f2f0;
+      --clay:      #cba488;
+      --clay-light:#e8d5c4;
+      --white:     #ffffff;
+      --text:      #322e2e;
+      --font-serif: 'Cardo', Georgia, serif;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-script: 'Moontime', cursive;
+    }
+
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-serif);
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── Nav ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(246, 242, 240, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(203, 164, 136, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-logo img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    .nav-logo-text {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--font-serif);
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      opacity: 0.75;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover { opacity: 1; }
+
+    .nav-cta {
+      font-family: var(--font-serif);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--charcoal);
+      padding: 0.65rem 1.5rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover { background: var(--sage); }
+
+    /* ─── Hero ─── */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      filter: brightness(0.72);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(50, 46, 46, 0.1) 0%,
+        rgba(50, 46, 46, 0.35) 60%,
+        rgba(50, 46, 46, 0.55) 100%
+      );
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: var(--cream);
+      padding: 0 1.5rem;
+      animation: fadeUp 1.2s ease both;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-script);
+      font-size: 2.2rem;
+      color: var(--clay);
+      margin-bottom: 0.5rem;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.3s both;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 1.25rem;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.5s both;
+    }
+
+    .hero-tagline {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      font-style: italic;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      color: var(--clay-light);
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.7s both;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.9s both;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      font-family: var(--font-serif);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      background: var(--cream);
+      padding: 1rem 2.5rem;
+      transition: all 0.25s;
+    }
+
+    .btn-primary:hover {
+      background: var(--clay);
+      color: var(--white);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      font-family: var(--font-serif);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cream);
+      background: transparent;
+      border: 1px solid rgba(246, 242, 240, 0.5);
+      padding: 1rem 2.5rem;
+      transition: all 0.25s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--clay);
+      color: var(--clay);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--cream);
+      opacity: 0.6;
+      animation: fadeUp 1s ease 1.2s both;
+    }
+
+    .hero-scroll span {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: var(--cream);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    /* ─── Section Shared ─── */
+    section { padding: 6rem 3rem; }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--charcoal);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--clay);
+    }
+
+    .section-body {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--charcoal);
+      opacity: 0.8;
+      max-width: 520px;
+    }
+
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: var(--clay);
+      margin: 1.5rem 0;
+    }
+
+    /* ─── Intro / About Strip ─── */
+    .intro {
+      background: var(--charcoal);
+      padding: 4rem 3rem;
+      text-align: center;
+    }
+
+    .intro-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .intro p {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--cream);
+      opacity: 0.92;
+    }
+
+    .intro p span {
+      color: var(--clay);
+    }
+
+    /* ─── About Section ─── */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 3rem;
+    }
+
+    .about-image {
+      position: relative;
+      height: 580px;
+      overflow: hidden;
+    }
+
+    .about-image img {
+      transition: transform 0.6s ease;
+    }
+
+    .about-image:hover img { transform: scale(1.03); }
+
+    .about-image-accent {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      width: 180px;
+      height: 180px;
+      border: 1px solid var(--clay);
+      z-index: -1;
+    }
+
+    .about-content {
+      padding: 3rem 0 3rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .about-signature {
+      font-family: var(--font-script);
+      font-size: 2.8rem;
+      color: var(--clay);
+      margin-top: 1.5rem;
+    }
+
+    /* ─── Workshop Section ─── */
+    .workshop {
+      background: var(--cream);
+      padding: 6rem 3rem;
+    }
+
+    .workshop-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .workshop-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .workshop-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .workshop-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .workshop-card-img {
+      height: 380px;
+      overflow: hidden;
+    }
+
+    .workshop-card-img img {
+      transition: transform 0.6s ease;
+    }
+
+    .workshop-card:hover .workshop-card-img img {
+      transform: scale(1.05);
+    }
+
+    .workshop-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(50,46,46,0.8) 0%, transparent 50%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.75rem;
+    }
+
+    .workshop-card-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 0.4rem;
+    }
+
+    .workshop-card-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--cream);
+      line-height: 1.3;
+    }
+
+    .workshop-cta {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .btn-dark {
+      display: inline-block;
+      font-family: var(--font-serif);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--charcoal);
+      padding: 1rem 2.75rem;
+      transition: background 0.25s;
+    }
+
+    .btn-dark:hover { background: var(--sage); }
+
+    /* ─── Experience / What to Expect ─── */
+    .experience {
+      background: var(--charcoal);
+      padding: 6rem 3rem;
+    }
+
+    .experience-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .experience-content .section-title { color: var(--cream); }
+    .experience-content .section-label { color: var(--clay); }
+    .experience-content .section-body { color: var(--cream); opacity: 0.75; }
+    .experience-content .divider { background: var(--clay); }
+
+    .experience-list {
+      list-style: none;
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .experience-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      color: var(--cream);
+      opacity: 0.85;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .experience-list li::before {
+      content: '—';
+      color: var(--clay);
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .experience-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 260px 180px;
+      gap: 6px;
+    }
+
+    .exp-img-1 {
+      grid-column: 1 / -1;
+      overflow: hidden;
+    }
+
+    .exp-img-2, .exp-img-3 {
+      overflow: hidden;
+    }
+
+    .exp-img-1 img,
+    .exp-img-2 img,
+    .exp-img-3 img {
+      transition: transform 0.5s ease;
+    }
+
+    .exp-img-1:hover img,
+    .exp-img-2:hover img,
+    .exp-img-3:hover img { transform: scale(1.04); }
+
+    /* ─── Reviews ─── */
+    .reviews {
+      background: var(--cream);
+      padding: 6rem 3rem;
+      text-align: center;
+    }
+
+    .reviews-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+
+    .review-card {
+      background: var(--white);
+      padding: 2.5rem 2rem;
+      text-align: left;
+      border-bottom: 2px solid var(--clay);
+    }
+
+    .review-stars {
+      color: var(--clay);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    .review-text {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--charcoal);
+      opacity: 0.85;
+      margin-bottom: 1.25rem;
+    }
+
+    .review-author {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+
+    /* ─── Gallery Strip ─── */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      height: 320px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gallery-item img {
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img { transform: scale(1.08); }
+
+    /* ─── CTA Banner ─── */
+    .cta-banner {
+      position: relative;
+      height: 420px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cta-banner-bg {
+      position: absolute;
+      inset: 0;
+    }
+
+    .cta-banner-bg img {
+      filter: brightness(0.55);
+    }
+
+    .cta-banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(50, 46, 46, 0.3);
+    }
+
+    .cta-banner-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: var(--cream);
+      padding: 0 2rem;
+    }
+
+    .cta-banner-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 300;
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-banner-content p {
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.8;
+      margin-bottom: 2rem;
+      color: var(--clay-light);
+    }
+
+    /* ─── Contact / Footer ─── */
+    footer {
+      background: var(--charcoal);
+      padding: 4rem 3rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(246, 242, 240, 0.1);
+    }
+
+    .footer-brand-name {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-tagline {
+      font-family: var(--font-script);
+      font-size: 1.4rem;
+      color: var(--clay);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-desc {
+      font-size: 0.85rem;
+      line-height: 1.8;
+      color: var(--cream);
+      opacity: 0.55;
+    }
+
+    .footer-heading {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-links a {
+      font-size: 0.85rem;
+      color: var(--cream);
+      opacity: 0.6;
+      transition: opacity 0.2s;
+    }
+
+    .footer-links a:hover { opacity: 1; }
+
+    .footer-contact-item {
+      font-size: 0.85rem;
+      color: var(--cream);
+      opacity: 0.6;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-contact-item a {
+      transition: opacity 0.2s;
+    }
+
+    .footer-contact-item a:hover { opacity: 1; }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: var(--cream);
+      opacity: 0.3;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    .footer-social a {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cream);
+      opacity: 0.4;
+      transition: opacity 0.2s;
+    }
+
+    .footer-social a:hover { opacity: 0.9; }
+
+    /* ─── Animations ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { transform: scaleY(1); opacity: 0.6; }
+      50% { transform: scaleY(0.6); opacity: 0.3; }
+    }
+
+    /* ─── Scroll Reveal ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── Mobile ─── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      section { padding: 4rem 1.5rem; }
+      .about { grid-template-columns: 1fr; padding: 4rem 1.5rem; }
+      .about-content { padding: 2rem 0 0; }
+      .about-image { height: 360px; }
+      .workshop-grid { grid-template-columns: 1fr; }
+      .experience-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: repeat(3, 1fr); height: 240px; }
+      .gallery-item:nth-child(4),
+      .gallery-item:nth-child(5) { display: none; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">
+      <img src="images/favicon.png" alt="Root & Craft" />
+      <span class="nav-logo-text">Root & Craft</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#workshops">Workshops</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="https://www.eventbrite.ca/o/root-craft-120889367168" target="_blank" class="nav-cta">Book Now</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="images/hero.jpg" alt="Root & Craft Workshop" />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Creative workshops to feed the soul</p>
+      <h1 class="hero-title">Root & Craft</h1>
+      <p class="hero-tagline">Gather &nbsp;·&nbsp; Create &nbsp;·&nbsp; Be</p>
+      <div class="hero-buttons">
+        <a href="https://www.eventbrite.ca/o/root-craft-120889367168" target="_blank" class="btn-primary">Book a Workshop</a>
+        <a href="#about" class="btn-outline">Our Story</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- INTRO STRIP -->
+  <div class="intro">
+    <div class="intro-inner">
+      <p>"A space to slow down, create with your hands, and <span>connect with community</span> — rooted in togetherness."</p>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div id="about" class="about">
+    <div class="about-image reveal">
+      <img src="images/cass.jpg" alt="Casandra Werner, Founder of Root & Craft" />
+      <div class="about-image-accent"></div>
+    </div>
+    <div class="about-content reveal">
+      <p class="section-label">Meet Your Host</p>
+      <h2 class="section-title">Hello, I'm <em>Cass</em></h2>
+      <div class="divider"></div>
+      <p class="section-body">
+        Root & Craft was born from a deep belief that creativity is for everyone — and that making something with your hands is one of the most nourishing things you can do for your soul.
+      </p>
+      <br />
+      <p class="section-body">
+        I'm Casandra, the founder and host of Root & Craft. I create intimate, thoughtfully curated workshops in North Vancouver where small groups of women come together to learn, make, and connect — in a space that feels as good as it looks.
+      </p>
+      <p class="about-signature">Cass</p>
+    </div>
+  </div>
+
+  <!-- WORKSHOPS -->
+  <section id="workshops" class="workshop">
+    <div class="workshop-inner">
+      <div class="workshop-header reveal">
+        <p class="section-label">What We Offer</p>
+        <h2 class="section-title">Upcoming <em>Workshops</em></h2>
+        <div class="divider" style="margin: 1.5rem auto;"></div>
+        <p style="font-size: 0.95rem; line-height: 1.8; opacity: 0.7; max-width: 480px; margin: 0 auto;">
+          Small, intimate gatherings of 8–10 people. Beginner-friendly. Always thoughtful.
+        </p>
+      </div>
+      <div class="workshop-grid">
+        <div class="workshop-card reveal">
+          <div class="workshop-card-img">
+            <img src="images/workshop1.jpg" alt="Polymer Clay Earring Workshop" />
+          </div>
+          <div class="workshop-card-overlay">
+            <span class="workshop-card-label">2 Hours · 8–10 guests</span>
+            <h3 class="workshop-card-title">Polymer Clay<br/>Earring Making</h3>
+          </div>
+        </div>
+        <div class="workshop-card reveal">
+          <div class="workshop-card-img">
+            <img src="images/workshop2.jpg" alt="Root & Craft Community" />
+          </div>
+          <div class="workshop-card-overlay">
+            <span class="workshop-card-label">North Vancouver, BC</span>
+            <h3 class="workshop-card-title">Gather &<br/>Create Together</h3>
+          </div>
+        </div>
+        <div class="workshop-card reveal">
+          <div class="workshop-card-img">
+            <img src="images/workshop3.jpg" alt="Workshop details" />
+          </div>
+          <div class="workshop-card-overlay">
+            <span class="workshop-card-label">Coming Soon</span>
+            <h3 class="workshop-card-title">More Workshops<br/>On the Way</h3>
+          </div>
+        </div>
+      </div>
+      <div class="workshop-cta reveal">
+        <a href="https://www.eventbrite.ca/o/root-craft-120889367168" target="_blank" class="btn-dark">View All Upcoming Workshops</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="experience">
+    <div class="experience-inner">
+      <div class="experience-content reveal">
+        <p class="section-label">The Root & Craft Experience</p>
+        <h2 class="section-title">More than a <em>workshop</em></h2>
+        <div class="divider"></div>
+        <p class="section-body">
+          Every detail is considered — from the curated snacks and herbal teas to the tools laid out just so. You'll leave with something you made with your own hands, and hopefully a few new friends too.
+        </p>
+        <ul class="experience-list">
+          <li>All materials and tools provided</li>
+          <li>Snacks, filtered water & herbal tea included</li>
+          <li>Beginner-friendly — no experience needed</li>
+          <li>Small groups for an intimate, relaxed atmosphere</li>
+          <li>Take home your handmade earrings in a gift box</li>
+          <li>North Vancouver, BC location</li>
+        </ul>
+      </div>
+      <div class="experience-images reveal">
+        <div class="exp-img-1">
+          <img src="images/experience1.jpg" alt="Workshop experience" />
+        </div>
+        <div class="exp-img-2">
+          <img src="images/experience2.jpg" alt="Clay details" />
+        </div>
+        <div class="exp-img-3">
+          <img src="images/experience3.jpg" alt="Earrings" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews">
+    <div class="reviews-inner">
+      <div class="reveal">
+        <p class="section-label">From Our Community</p>
+        <h2 class="section-title">What guests are <em>saying</em></h2>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card reveal">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"I absolutely loved this polymer earring making workshop. Cass was phenomenal — warm, talented, and incredibly supportive. I left with earrings I'm genuinely proud of."</p>
+          <p class="review-author">— Workshop Guest</p>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"The space was beautiful, Cass walked us through every step of the way. The group of amazing women there was an added bonus to get to connect with!"</p>
+          <p class="review-author">— Workshop Guest</p>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"I spent a lovely Sunday afternoon crafting some cute earrings and had a great time. Cass does a great job of guiding you through the process. Highly recommend!"</p>
+          <p class="review-author">— Workshop Guest</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY STRIP -->
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="images/gallery1.jpg" alt="Root & Craft" />
+    </div>
+    <div class="gallery-item">
+      <img src="images/gallery2.jpg" alt="Root & Craft" />
+    </div>
+    <div class="gallery-item">
+      <img src="images/gallery3.jpg" alt="Root & Craft" />
+    </div>
+    <div class="gallery-item">
+      <img src="images/gallery4.jpg" alt="Root & Craft" />
+    </div>
+    <div class="gallery-item">
+      <img src="images/gallery5.jpg" alt="Root & Craft" />
+    </div>
+  </div>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <div class="cta-banner-bg">
+      <img src="images/cta-bg.jpg" alt="Join a Workshop" />
+    </div>
+    <div class="cta-banner-overlay"></div>
+    <div class="cta-banner-content reveal">
+      <h2>Ready to gather & create?</h2>
+      <p>Spots fill quickly — reserve yours today</p>
+      <a href="https://www.eventbrite.ca/o/root-craft-120889367168" target="_blank" class="btn-primary">Book Your Spot</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-brand-name">Root & Craft</p>
+        <p class="footer-tagline">Rooted in Togetherness</p>
+        <p class="footer-desc">Creative workshops for women in North Vancouver, BC. Small groups. Thoughtful experiences. Something beautiful to take home.</p>
+      </div>
+      <div>
+        <p class="footer-heading">Explore</p>
+        <ul class="footer-links">
+          <li><a href="#about">About Cass</a></li>
+          <li><a href="#workshops">Workshops</a></li>
+          <li><a href="#experience">The Experience</a></li>
+          <li><a href="https://www.eventbrite.ca/o/root-craft-120889367168" target="_blank">Book a Workshop</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-heading">Get in Touch</p>
+        <p class="footer-contact-item"><a href="mailto:hello@rootandcraft.ca">hello@rootandcraft.ca</a></p>
+        <p class="footer-contact-item"><a href="tel:7789909822">778.990.9822</a></p>
+        <p class="footer-contact-item" style="margin-top: 1rem;">North Vancouver, BC</p>
+        <p class="footer-contact-item">rootandcraft.ca</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Root & Craft. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="https://instagram.com/rootandcraft" target="_blank">Instagram</a>
+        <a href="https://www.eventbrite.ca/o/root-craft-120889367168" target="_blank">Eventbrite</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS: Scroll Reveal -->
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
