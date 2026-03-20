@@ -7,6 +7,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Moontime&display=swap" rel="stylesheet" />
+  <!-- MailerLite Universal -->
+  <script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2207715');
+  </script>
+  <!-- End MailerLite Universal -->
 
   <style>
     /* ─── CSS Variables ─── */
@@ -458,6 +467,80 @@
 
     .btn-dark:hover { background: var(--sage); }
 
+    /* ─── Offerings ─── */
+    .offerings {
+      background: var(--charcoal);
+      padding: 6rem 3rem;
+    }
+
+    .offerings-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .offerings-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .offerings-header .section-title { color: var(--cream); }
+    .offerings-header .section-label { color: var(--clay); }
+
+    .offerings-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .offering-card {
+      background: rgba(246, 242, 240, 0.05);
+      border: 1px solid rgba(203, 164, 136, 0.2);
+      padding: 2.5rem 2rem;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .offering-card:hover {
+      border-color: var(--clay);
+      background: rgba(203, 164, 136, 0.08);
+    }
+
+    a.offering-card {
+      display: block;
+      cursor: pointer;
+    }
+
+    .offering-icon {
+      font-family: var(--font-script);
+      font-size: 2.2rem;
+      color: var(--clay);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .offering-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 0.75rem;
+    }
+
+    .offering-desc {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--cream);
+      opacity: 0.65;
+    }
+
+    .offerings-cta {
+      text-align: center;
+      margin-top: 3.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .offerings-grid { grid-template-columns: 1fr; }
+    }
+
     /* ─── Experience / What to Expect ─── */
     .experience {
       background: var(--charcoal);
@@ -757,6 +840,28 @@
 
     .footer-social a:hover { opacity: 0.9; }
 
+    /* ─── Mailing List ─── */
+    .mailing-list {
+      background: var(--cream);
+      padding: 6rem 3rem;
+      text-align: center;
+    }
+
+    .mailing-list-inner {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .mailing-list .section-title {
+      margin-bottom: 1rem;
+    }
+
+    .mailing-list .section-body {
+      max-width: 100%;
+      margin: 0 auto 2.5rem;
+      text-align: center;
+    }
+
     /* ─── Animations ─── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
@@ -804,12 +909,13 @@
 
   <!-- NAV -->
   <nav>
-    <div class="nav-logo">
+    <a href="#" class="nav-logo">
       <img src="images/favicon.png" alt="Root & Craft" />
       <span class="nav-logo-text">Root & Craft</span>
-    </div>
+    </a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
+      <li><a href="#offerings">Offerings</a></li>
       <li><a href="#workshops">Workshops</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -856,15 +962,49 @@
       <h2 class="section-title">Hello, I'm <em>Cass</em></h2>
       <div class="divider"></div>
       <p class="section-body">
-        Root & Craft was born from a deep belief that creativity is for everyone — and that making something with your hands is one of the most nourishing things you can do for your soul.
+        Root & Craft was born from the belief that creativity is for everyone — and that creating with your hands is a simple, nourishing way to reconnect with yourself and the present moment.
       </p>
       <br />
       <p class="section-body">
-        I'm Casandra, the founder and host of Root & Craft. I create intimate, thoughtfully curated workshops in North Vancouver where small groups of women come together to learn, make, and connect — in a space that feels as good as it looks.
+        I'm Casandra, the founder and host of Root & Craft. I create intimate, thoughtfully curated workshops in Vancouver where small groups of people come together to be present, create, and connect — in a space that feels as good as it looks.
       </p>
       <p class="about-signature">Cass</p>
     </div>
   </div>
+
+  <!-- OFFERINGS -->
+  <section id="offerings" class="offerings">
+    <div class="offerings-inner">
+      <div class="offerings-header reveal">
+        <p class="section-label">What's Available</p>
+        <h2 class="section-title">Our <em>Offerings</em></h2>
+        <div class="divider" style="margin: 1.5rem auto; background: var(--clay);"></div>
+        <p style="font-size: 0.95rem; line-height: 1.8; color: var(--cream); opacity: 0.65; max-width: 480px; margin: 0 auto;">
+          We bring creative experiences to private spaces, workplaces, and senior living environments. For all hands, all skill levels, all kinds of creativity.
+        </p>
+      </div>
+      <div class="offerings-grid">
+        <a href="https://www.eventbrite.ca/o/root-craft-120889367168" target="_blank" class="offering-card reveal">
+          <span class="offering-icon">Gather</span>
+          <h3 class="offering-title">Public Workshops</h3>
+          <p class="offering-desc">Open to all — join a scheduled workshop and create alongside a small group of like-minded people. Beginner-friendly, all materials included.</p>
+        </a>
+        <a href="#contact" class="offering-card reveal">
+          <span class="offering-icon">Celebrate</span>
+          <h3 class="offering-title">Private Events</h3>
+          <p class="offering-desc">Book a private session for your birthday, girls' night, bridal party, or any gathering worth celebrating. Fully customizable for your group.</p>
+        </a>
+        <a href="#contact" class="offering-card reveal">
+          <span class="offering-icon">Connect</span>
+          <h3 class="offering-title">Corporate & Team Events</h3>
+          <p class="offering-desc">Bring your team together with a creative experience that sparks connection. A refreshing alternative to the usual team-building event.</p>
+        </a>
+      </div>
+      <div class="offerings-cta reveal">
+        <a href="#contact" class="btn-primary" style="background: var(--clay); color: var(--white);">Enquire About Bookings</a>
+      </div>
+    </div>
+  </section>
 
   <!-- WORKSHOPS -->
   <section id="workshops" class="workshop">
@@ -874,37 +1014,37 @@
         <h2 class="section-title">Upcoming <em>Workshops</em></h2>
         <div class="divider" style="margin: 1.5rem auto;"></div>
         <p style="font-size: 0.95rem; line-height: 1.8; opacity: 0.7; max-width: 480px; margin: 0 auto;">
-          Small, intimate gatherings of 8–10 people. Beginner-friendly. Always thoughtful.
+          Small, intimate gatherings of 8–12 people. Beginner-friendly. Always thoughtful.
         </p>
       </div>
       <div class="workshop-grid">
-        <div class="workshop-card reveal">
+        <a href="https://www.eventbrite.ca/o/root-craft-120889367168" target="_blank" class="workshop-card reveal">
+          <div class="workshop-card-img">
+            <img src="images/workshop2.jpg" alt="Root & Craft Community" />
+          </div>
+          <div class="workshop-card-overlay">
+            <span class="workshop-card-label">2 Hours · 10–12 guests</span>
+            <h3 class="workshop-card-title">Luxury Bath Soak<br/>Workshop</h3>
+          </div>
+        </a>
+        <a href="https://www.eventbrite.ca/o/root-craft-120889367168" target="_blank" class="workshop-card reveal">
           <div class="workshop-card-img">
             <img src="images/workshop1.jpg" alt="Polymer Clay Earring Workshop" />
           </div>
           <div class="workshop-card-overlay">
             <span class="workshop-card-label">2 Hours · 8–10 guests</span>
-            <h3 class="workshop-card-title">Polymer Clay<br/>Earring Making</h3>
+            <h3 class="workshop-card-title">Polymer Clay<br/>Earrings</h3>
           </div>
-        </div>
-        <div class="workshop-card reveal">
-          <div class="workshop-card-img">
-            <img src="images/workshop2.jpg" alt="Root & Craft Community" />
-          </div>
-          <div class="workshop-card-overlay">
-            <span class="workshop-card-label">North Vancouver, BC</span>
-            <h3 class="workshop-card-title">Gather &<br/>Create Together</h3>
-          </div>
-        </div>
-        <div class="workshop-card reveal">
+        </a>
+        <a href="https://www.eventbrite.ca/o/root-craft-120889367168" target="_blank" class="workshop-card reveal">
           <div class="workshop-card-img">
            <img src="images/workshop3.jpeg" alt="Workshop details" />
           </div>
           <div class="workshop-card-overlay">
-            <span class="workshop-card-label">Coming Soon</span>
-            <h3 class="workshop-card-title">More Workshops<br/>On the Way</h3>
+            <span class="workshop-card-label">2 Hours · 8–10 guests</span>
+            <h3 class="workshop-card-title">Air Dry Clay<br/>Trinket Dish</h3>
           </div>
-        </div>
+        </a>
       </div>
       <div class="workshop-cta reveal">
         <a href="https://www.eventbrite.ca/o/root-craft-120889367168" target="_blank" class="btn-dark">View All Upcoming Workshops</a>
@@ -920,15 +1060,15 @@
         <h2 class="section-title">More than a <em>workshop</em></h2>
         <div class="divider"></div>
         <p class="section-body">
-          Every detail is considered — from the curated snacks and herbal teas to the tools laid out just so. You'll leave with something you made with your own hands, and hopefully a few new friends too.
+          Every detail is intentionally considered — from curated snacks and herbal teas to tools laid out with care. You'll leave with something made by your own hands and a few meaningful connections along the way.
         </p>
         <ul class="experience-list">
           <li>All materials and tools provided</li>
-          <li>Snacks, filtered water & herbal tea included</li>
+          <li>Healthy snacks, filtered water, coffee, and herbal tea included</li>
           <li>Beginner-friendly — no experience needed</li>
           <li>Small groups for an intimate, relaxed atmosphere</li>
-          <li>Take home your handmade earrings in a gift box</li>
-          <li>North Vancouver, BC location</li>
+          <li>Take home your handmade items in thoughtfully prepared packaging</li>
+          <li>Leave with renewed energy and the satisfaction of creating something beautiful by hand</li>
         </ul>
       </div>
       <div class="experience-images reveal">
@@ -960,7 +1100,7 @@
         </div>
         <div class="review-card reveal">
           <div class="review-stars">★★★★★</div>
-          <p class="review-text">"The space was beautiful, Cass walked us through every step of the way. The group of amazing women there was an added bonus to get to connect with!"</p>
+          <p class="review-text">"The space was beautiful, Cass walked us through every step of the way. The group of amazing people there was an added bonus to get to connect with!"</p>
           <p class="review-author">— Workshop Guest</p>
         </div>
         <div class="review-card reveal">
@@ -991,6 +1131,17 @@
     </div>
   </div>
 
+  <!-- MAILING LIST -->
+  <section class="mailing-list">
+    <div class="mailing-list-inner reveal">
+      <p class="section-label">Stay in the Loop</p>
+      <h2 class="section-title">Stay close to what's <em>unfolding</em></h2>
+      <div class="divider" style="margin: 1.5rem auto;"></div>
+      <p class="section-body">Be the first to hear about upcoming workshops, new offerings, and thoughtfully curated details.</p>
+      <div class="ml-embedded" data-form="6RKORC"></div>
+    </div>
+  </section>
+
   <!-- CTA BANNER -->
   <div class="cta-banner">
     <div class="cta-banner-bg">
@@ -1010,12 +1161,13 @@
       <div>
         <p class="footer-brand-name">Root & Craft</p>
         <p class="footer-tagline">Rooted in Togetherness</p>
-        <p class="footer-desc">Creative workshops for women in North Vancouver, BC. Small groups. Thoughtful experiences. Something beautiful to take home.</p>
+        <p class="footer-desc">Creative workshops for everyone in Vancouver, BC. Small groups. Thoughtful experiences. Something beautiful to take home.</p>
       </div>
       <div>
         <p class="footer-heading">Explore</p>
         <ul class="footer-links">
           <li><a href="#about">About Cass</a></li>
+          <li><a href="#offerings">Offerings</a></li>
           <li><a href="#workshops">Workshops</a></li>
           <li><a href="#experience">The Experience</a></li>
           <li><a href="https://www.eventbrite.ca/o/root-craft-120889367168" target="_blank">Book a Workshop</a></li>
@@ -1025,14 +1177,15 @@
         <p class="footer-heading">Get in Touch</p>
         <p class="footer-contact-item"><a href="mailto:hello@rootandcraft.ca">hello@rootandcraft.ca</a></p>
         <p class="footer-contact-item"><a href="tel:7789909822">778.990.9822</a></p>
-        <p class="footer-contact-item" style="margin-top: 1rem;">North Vancouver, BC</p>
-        <p class="footer-contact-item">rootandcraft.ca</p>
+        <p class="footer-contact-item" style="margin-top: 1rem;">Vancouver, BC</p>
       </div>
     </div>
     <div class="footer-bottom">
       <p class="footer-copy">© 2025 Root & Craft. All rights reserved.</p>
       <div class="footer-social">
-        <a href="https://instagram.com/rootandcraft" target="_blank">Instagram</a>
+        <a href="https://www.instagram.com/root.andcraft/" target="_blank">Instagram</a>
+        <a href="https://www.tiktok.com/@rootcraft11?_r=1&_t=ZS-94AvPSI13B6" target="_blank">TikTok</a>
+        <a href="https://www.facebook.com/profile.php?id=61586463384878" target="_blank">Facebook</a>
         <a href="https://www.eventbrite.ca/o/root-craft-120889367168" target="_blank">Eventbrite</a>
       </div>
     </div>
