@@ -863,6 +863,98 @@
       text-align: center;
     }
 
+    /* ─── Social Cards ─── */
+    .social-section {
+      background: var(--cream);
+      padding: 6rem 3rem;
+      text-align: center;
+    }
+
+    .social-section-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .social-sub {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--sage);
+      margin-bottom: 3rem;
+    }
+
+    .social-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .social-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 2rem 1rem 1.75rem;
+      background: var(--white);
+      border: 1px solid var(--clay-light);
+      text-decoration: none;
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+    }
+
+    .social-card:hover {
+      border-color: var(--clay);
+      box-shadow: 0 4px 20px rgba(203, 164, 136, 0.18);
+      transform: translateY(-3px);
+    }
+
+    .social-icon-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--charcoal);
+      color: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.4rem;
+      transition: background 0.25s;
+    }
+
+    .social-card:hover .social-icon-wrap {
+      background: var(--clay);
+    }
+
+    .social-card-label {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      letter-spacing: 0.04em;
+    }
+
+    .social-card-handle {
+      font-family: var(--font-serif);
+      font-size: 0.78rem;
+      color: var(--sage);
+      letter-spacing: 0.03em;
+    }
+
+    .social-card-cta {
+      font-family: var(--font-serif);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-top: 0.25rem;
+    }
+
+    @media (max-width: 600px) {
+      .social-cards { grid-template-columns: 1fr; max-width: 280px; }
+    }
+
     /* ─── Animations ─── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
@@ -1155,6 +1247,54 @@
       <a href="https://www.eventbrite.ca/o/root-craft-120889367168" target="_blank" class="btn-primary">Book Your Spot</a>
     </div>
   </div>
+
+  <!-- SOCIAL CARDS -->
+  <section class="social-section">
+    <div class="social-section-inner reveal">
+      <p class="section-label">Follow Along</p>
+      <h2 class="section-title">Find us on <em>social</em></h2>
+      <div class="divider" style="margin: 1.5rem auto;"></div>
+      <p class="social-sub">Behind-the-scenes, workshop updates, clay inspo &amp; more</p>
+      <div class="social-cards">
+
+        <a href="https://www.instagram.com/root.andcraft/" target="_blank" class="social-card">
+          <div class="social-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="1.6"/>
+              <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/>
+              <circle cx="17.5" cy="6.5" r="1.1" fill="currentColor"/>
+            </svg>
+          </div>
+          <span class="social-card-label">Instagram</span>
+          <span class="social-card-handle">@root.andcraft</span>
+          <span class="social-card-cta">Follow →</span>
+        </a>
+
+        <a href="https://www.tiktok.com/@rootcraft11?_r=1&_t=ZS-94AvPSI13B6" target="_blank" class="social-card">
+          <div class="social-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="social-card-label">TikTok</span>
+          <span class="social-card-handle">@rootcraft11</span>
+          <span class="social-card-cta">Follow →</span>
+        </a>
+
+        <a href="https://www.facebook.com/profile.php?id=61586463384878" target="_blank" class="social-card">
+          <div class="social-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="social-card-label">Facebook</span>
+          <span class="social-card-handle">Root &amp; Craft</span>
+          <span class="social-card-cta">Follow →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer id="contact">
