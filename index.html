@@ -404,6 +404,10 @@
       gap: 2px;
     }
 
+    .workshop-grid-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
     .workshop-card {
       position: relative;
       overflow: hidden;
@@ -986,7 +990,7 @@
       .about { grid-template-columns: 1fr; padding: 4rem 1.5rem; }
       .about-content { padding: 2rem 0 0; }
       .about-image { height: 360px; }
-      .workshop-grid { grid-template-columns: 1fr; }
+      .workshop-grid, .workshop-grid-4 { grid-template-columns: 1fr; }
       .experience-inner { grid-template-columns: 1fr; gap: 3rem; }
       .reviews-grid { grid-template-columns: 1fr; }
       .gallery { grid-template-columns: repeat(3, 1fr); height: 240px; }
@@ -1115,7 +1119,7 @@
       <div class="divider" style="margin: 1.5rem auto; background: var(--clay);"></div>
       <p style="font-size: 0.95rem; line-height: 1.8; color: var(--cream); opacity: 0.65; max-width: 480px; margin: 0 auto;">Four signature experiences, each designed to slow you down and create something beautiful by hand. Within each workshop category, guests can choose from a range of designs, textures, colours, scents, and other variations to create something that feels uniquely personal.</p>
     </div>
-    <div class="workshop-grid" style="grid-template-columns: repeat(4, 1fr);">
+    <div class="workshop-grid workshop-grid-4">
       <div class="workshop-card reveal">
         <div class="workshop-card-img"><img src="images/sig-clay-earrings.jpg" alt="Polymer Clay Earrings" /></div>
         <div class="workshop-card-overlay">
