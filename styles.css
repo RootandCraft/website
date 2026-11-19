@@ -1328,3 +1328,6 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45d
   font-size: clamp(2.2rem, 4.4vw, 3.8rem);
 }
 .hero-sub { max-width: 640px; }
+
+/* Smaller signature on the About page */
+.about-signature { font-size: 2.1rem; margin-top: 1.25rem; }
