@@ -1311,3 +1311,20 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45d
 /* Home link only shows in the mobile menu (logo does the job on desktop) */
 @media (min-width: 1101px) { .nav-links .nav-home { display: none; } }
 .nav-links a { letter-spacing: 0.12em; font-size: 0.74rem; }
+
+/* Homepage hero: brand name in caps above, headline as written */
+.hero-eyebrow.hero-eyebrow-caps {
+  font-family: var(--font-display);
+  font-size: clamp(0.85rem, 1.4vw, 1.05rem);
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--clay-light);
+  margin-bottom: 1.25rem;
+}
+.hero-title.hero-title-phrase {
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-size: clamp(2.8rem, 6vw, 5.4rem);
+}
+.hero-sub { max-width: 640px; }
