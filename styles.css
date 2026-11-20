@@ -1352,3 +1352,7 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45d
 .item-card-img video, .split-media video {
   width: 100%; height: 100%; object-fit: cover; display: block;
 }
+
+/* Landscape photo slot: show the whole image (virtual kit box) */
+.split-media.split-media-landscape { height: auto; aspect-ratio: 3 / 2; }
+@media (max-width: 768px) { .split-media.split-media-landscape { height: auto; } }
