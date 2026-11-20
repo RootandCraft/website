@@ -1331,3 +1331,9 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45d
 
 /* Smaller signature on the About page */
 .about-signature { font-size: 2.1rem; margin-top: 1.25rem; }
+
+/* Gifting project photo trio */
+.project-photos > div { height: 460px; overflow: hidden; }
+.project-photos img { transition: transform 0.6s ease; }
+.project-photos > div:hover img { transform: scale(1.03); }
+@media (max-width: 960px) { .project-photos > div { height: 380px; } }
