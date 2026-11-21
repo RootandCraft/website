@@ -1403,3 +1403,11 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45d
 
 /* Activations example cards: clearer borders on dark */
 .bg-charcoal .example-cards .example-card { border-color: rgba(203, 164, 136, 0.55); background: rgba(246, 242, 240, 0.03); }
+
+/* Home: values list */
+.values-list { list-style: none; margin-top: 2.25rem; display: flex; flex-direction: column; gap: 1.35rem; }
+.values-list li { padding-left: 1.25rem; border-left: 1px solid rgba(203, 164, 136, 0.5); }
+.values-list h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 400; color: var(--clay); margin-bottom: 0.25rem; letter-spacing: 0.01em; }
+.values-list p { font-size: 0.9rem; line-height: 1.7; color: var(--cream); opacity: 0.75; }
+.experience-inner { align-items: center; }
+@media (min-width: 769px) { .experience-images { grid-template-rows: 330px 230px; } }
