@@ -71,24 +71,25 @@
         <p class="section-label">Start an Enquiry</p>
         <h2 class="section-title">Let's create <em>something together</em></h2>
         <div class="divider"></div>
-        <p class="section-body">Tell us a little about what you have in mind. You don't need to have all the details figured out. We're happy to help bring your ideas to life.</p>
+        <p class="section-body">Tell us a little about what you have in mind. You don't need to have everything figured out. A rough idea is a great place to start.</p>
         <form class="enquiry-form" name="enquiry" method="POST" action="/thank-you/" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="enquiry" />
           <p class="hp-field"><label>Leave this empty: <input name="bot-field" /></label></p>
+          <p class="hint" style="margin-top:-0.4rem;"><span class="req">*</span> Required question</p>
           <div class="field">
-            <label for="f-name">Your name <span class="req">*</span></label>
-            <input id="f-name" name="name" type="text" autocomplete="name" required />
+            <label for="f-name">1. Your name <span class="req">*</span></label>
+            <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your full name" required />
           </div>
           <div class="field">
-            <label for="f-email">Email address <span class="req">*</span></label>
-            <input id="f-email" name="email" type="email" autocomplete="email" required />
+            <label for="f-email">2. Email address <span class="req">*</span></label>
+            <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
           </div>
           <div class="field">
-            <label for="f-company">Company or organization <span class="opt">(if applicable)</span></label>
-            <input id="f-company" name="company" type="text" autocomplete="organization" />
+            <label for="f-company">3. Company or organization</label>
+            <input id="f-company" name="company" type="text" autocomplete="organization" placeholder="If applicable" />
           </div>
           <fieldset class="field">
-            <legend>What are you interested in? <span class="req">*</span></legend>
+            <legend>4. Which services are you interested in? <span class="req">*</span></legend>
             <div class="checks">
               <label><input type="checkbox" name="interest[]" value="Creative Workshops" /> Creative Workshops</label>
               <label><input type="checkbox" name="interest[]" value="Experiential Wellness Activations" /> Experiential Wellness Activations</label>
@@ -99,27 +100,38 @@
             <p class="field-error" id="interest-error" hidden>Please choose at least one option.</p>
           </fieldset>
           <div class="field">
-            <label for="f-date">Event date or desired delivery date</label>
+            <label for="f-date">5. Event date or desired delivery date</label>
             <input id="f-date" name="date" type="date" />
-            <p class="hint">Leave blank if you're flexible.</p>
+            <p class="hint">Leave blank if you're flexible or still deciding.</p>
           </div>
           <div class="field">
-            <label for="f-location">Where will your event take place?</label>
-            <input id="f-location" name="location" type="text" />
-            <p class="hint">For gifting, you can include the delivery location.</p>
+            <label for="f-location">6. Event or delivery location</label>
+            <input id="f-location" name="location" type="text" placeholder="City, venue, or virtual" />
           </div>
           <div class="field">
-            <label for="f-quantity">Approximately how many guests or gifts?</label>
-            <input id="f-quantity" name="quantity" type="text" inputmode="numeric" />
+            <label for="f-quantity">7. Approximately how many guests or gifts?</label>
+            <input id="f-quantity" name="quantity" type="text" placeholder="e.g. 15 guests or 75 gifts" />
           </div>
           <div class="field">
-            <label for="f-budget">Do you have a budget in mind?</label>
-            <input id="f-budget" name="budget" type="text" />
+            <label for="f-budget">8. Do you have a budget in mind?</label>
+            <input id="f-budget" name="budget" type="text" placeholder="Approximate total or per-person budget" />
           </div>
           <div class="field">
-            <label for="f-vision">Tell us a little about your vision</label>
-            <textarea id="f-vision" name="vision" rows="5"></textarea>
+            <label for="f-vision">9. Tell us a little about your vision</label>
+            <textarea id="f-vision" name="vision" rows="5" placeholder="Share your occasion, ideas, theme, or anything else you'd like us to know."></textarea>
           </div>
+          <fieldset class="field">
+            <legend>10. How did you hear about Root &amp; Craft?</legend>
+            <div class="checks">
+              <label><input type="radio" name="referral" value="Instagram" /> Instagram</label>
+              <label><input type="radio" name="referral" value="Google Search" /> Google Search</label>
+              <label><input type="radio" name="referral" value="Facebook" /> Facebook</label>
+              <label><input type="radio" name="referral" value="Friend or family recommendation" /> Friend or family recommendation</label>
+              <label><input type="radio" name="referral" value="Colleague or business referral" /> Colleague or business referral</label>
+              <label><input type="radio" name="referral" value="Attended a previous Root &amp; Craft experience" /> Attended a previous Root &amp; Craft experience</label>
+              <label><input type="radio" name="referral" value="Other" /> Other</label>
+            </div>
+          </fieldset>
           <button type="submit" class="btn-dark">Send an Enquiry</button>
         </form>
       </div>

@@ -1444,3 +1444,5 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45d
 .enquiry-form button { align-self: flex-start; margin-top: 0.5rem; border: none; cursor: pointer; }
 .hp-field { position: absolute; left: -9999px; }
 @media (min-width: 769px) { .two-col.contact-cols { grid-template-columns: 1.5fr 1fr; } }
+.enquiry-form input[type="radio"] { accent-color: var(--clay); width: 1.05rem; height: 1.05rem; }
+.enquiry-form ::placeholder { color: var(--charcoal); opacity: 0.4; font-style: italic; }
