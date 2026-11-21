@@ -1400,3 +1400,6 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45d
 .social-block .section-title em { color: #a97f62; }
 .social-block .divider { background: #a97f62 !important; }
 .social-block .social-sub { color: var(--charcoal); opacity: 0.75; }
+
+/* Activations example cards: clearer borders on dark */
+.bg-charcoal .example-cards .example-card { border-color: rgba(203, 164, 136, 0.55); background: rgba(246, 242, 240, 0.03); }
