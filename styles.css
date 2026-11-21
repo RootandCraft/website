@@ -1390,3 +1390,13 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45d
   .about-long { align-items: start; }
   .about-long .about-image { position: sticky; top: 7rem; }
 }
+
+/* About: socials in their own warm colour block */
+.social-section.social-block { background: var(--clay-light); padding: 5.5rem 3rem; }
+.social-block .social-card { border-color: transparent; }
+.social-block .social-card:hover { border-color: var(--clay); }
+@media (max-width: 768px) { .social-section.social-block { padding: 4rem 1.5rem; } }
+.social-block .section-label { color: #9a7559; }
+.social-block .section-title em { color: #a97f62; }
+.social-block .divider { background: #a97f62 !important; }
+.social-block .social-sub { color: var(--charcoal); opacity: 0.75; }
