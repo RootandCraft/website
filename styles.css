@@ -1362,3 +1362,6 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45d
 .project-cta h3 { font-family: var(--font-display); font-size: clamp(1.5rem, 2.6vw, 2rem); font-weight: 300; color: var(--charcoal); margin-bottom: 0.6rem; }
 .project-cta h3 em { font-style: italic; color: var(--clay); }
 .project-cta p { font-size: 0.97rem; line-height: 1.8; color: var(--charcoal); opacity: 0.78; margin-bottom: 1.75rem; }
+
+/* Tighter list spacing */
+.dash-compact .dash-list { gap: 0.45rem; margin-top: 1rem; }
