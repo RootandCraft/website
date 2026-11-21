@@ -66,15 +66,62 @@
   </section>
 
   <section class="bg-cream">
-    <div class="two-col" style="align-items: start;">
-      <div class="contact-panel reveal">
+    <div class="two-col contact-cols" style="align-items: start;">
+      <div class="contact-panel reveal" id="enquire">
         <p class="section-label">Start an Enquiry</p>
-        <h2 class="section-title">Tell Us What You <em>Have in Mind</em></h2>
+        <h2 class="section-title">Let's create <em>something together</em></h2>
         <div class="divider"></div>
-        <p class="section-body">Share a few details through our enquiry form, and we'll get back to you within 1–2 business days.</p>
-        <br />
-        <p class="section-body">You don't need to have everything figured out. A rough idea is a great place to start.</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScnFGwsWbq8lyjqXWWQhCBJ6uZsa8aePBgdtKsyK0-zcgUXMg/viewform" target="_blank" rel="noopener" class="btn-dark" style="margin-top: 2.25rem;">Send an Enquiry</a>
+        <p class="section-body">Tell us a little about what you have in mind. You don't need to have all the details figured out. We're happy to help bring your ideas to life.</p>
+        <form class="enquiry-form" name="enquiry" method="POST" action="/thank-you/" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="enquiry" />
+          <p class="hp-field"><label>Leave this empty: <input name="bot-field" /></label></p>
+          <div class="field">
+            <label for="f-name">Your name <span class="req">*</span></label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="f-email">Email address <span class="req">*</span></label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="f-company">Company or organization <span class="opt">(if applicable)</span></label>
+            <input id="f-company" name="company" type="text" autocomplete="organization" />
+          </div>
+          <fieldset class="field">
+            <legend>What are you interested in? <span class="req">*</span></legend>
+            <div class="checks">
+              <label><input type="checkbox" name="interest[]" value="Creative Workshops" /> Creative Workshops</label>
+              <label><input type="checkbox" name="interest[]" value="Experiential Wellness Activations" /> Experiential Wellness Activations</label>
+              <label><input type="checkbox" name="interest[]" value="Handmade Gifting" /> Handmade Gifting</label>
+              <label><input type="checkbox" name="interest[]" value="Not sure yet" /> Not sure yet</label>
+            </div>
+            <p class="hint">Select all that apply.</p>
+            <p class="field-error" id="interest-error" hidden>Please choose at least one option.</p>
+          </fieldset>
+          <div class="field">
+            <label for="f-date">Event date or desired delivery date</label>
+            <input id="f-date" name="date" type="date" />
+            <p class="hint">Leave blank if you're flexible.</p>
+          </div>
+          <div class="field">
+            <label for="f-location">Where will your event take place?</label>
+            <input id="f-location" name="location" type="text" />
+            <p class="hint">For gifting, you can include the delivery location.</p>
+          </div>
+          <div class="field">
+            <label for="f-quantity">Approximately how many guests or gifts?</label>
+            <input id="f-quantity" name="quantity" type="text" inputmode="numeric" />
+          </div>
+          <div class="field">
+            <label for="f-budget">Do you have a budget in mind?</label>
+            <input id="f-budget" name="budget" type="text" />
+          </div>
+          <div class="field">
+            <label for="f-vision">Tell us a little about your vision</label>
+            <textarea id="f-vision" name="vision" rows="5"></textarea>
+          </div>
+          <button type="submit" class="btn-dark">Send an Enquiry</button>
+        </form>
       </div>
       <div class="reveal" style="padding-top: 1rem;">
         <p class="section-label">Prefer to reach out directly?</p>
