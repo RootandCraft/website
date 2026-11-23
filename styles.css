@@ -1456,3 +1456,6 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45d
   .hero-bg video { display: none; }
   .hero-bg { background: url('/images/hero-video-poster.jpg') center / cover no-repeat; }
 }
+
+/* Footer botanical sprig */
+.footer-sprig { display: block; width: 90px; height: auto; margin-bottom: 1.1rem; opacity: 0.9; }
