@@ -1449,3 +1449,10 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45d
 
 /* Land the form below the fixed nav when jumping to #enquire */
 #enquire { scroll-margin-top: 6rem; }
+
+/* Homepage hero video */
+.hero-bg video { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; filter: brightness(0.82); }
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg video { display: none; }
+  .hero-bg { background: url('/images/hero-video-poster.jpg') center / cover no-repeat; }
+}
