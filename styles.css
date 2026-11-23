@@ -1446,3 +1446,6 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45d
 @media (min-width: 769px) { .two-col.contact-cols { grid-template-columns: 1.5fr 1fr; } }
 .enquiry-form input[type="radio"] { accent-color: var(--clay); width: 1.05rem; height: 1.05rem; }
 .enquiry-form ::placeholder { color: var(--charcoal); opacity: 0.4; font-style: italic; }
+
+/* Land the form below the fixed nav when jumping to #enquire */
+#enquire { scroll-margin-top: 6rem; }
